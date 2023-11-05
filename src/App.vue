@@ -11,7 +11,9 @@ const fileUploadEvents = {
 const config = {
   // imageUploadURL: "http://localhost:5555/image",
 
-  // saveURL: "http://localhost:5555/save",
+  saveURL: "http://localhost:5555/save",
+
+  saveInterval: 2000,
 
   events: {
     ...fileUploadEvents,
@@ -22,4 +24,5 @@ const froala = ref()
 </script>
 
 <template>
+  <Froala ref="froala" tag="textarea" :config="config" />
 </template>
