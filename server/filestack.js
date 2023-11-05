@@ -3,8 +3,6 @@ import fetch from "node-fetch";
 
 const client = filestack.init(process.env.FILESTACK_API_KEY);
 
-client.upload()
-
 /**
  * @param {Buffer} buffer
  * @returns {Promise<{ link: String }>}
