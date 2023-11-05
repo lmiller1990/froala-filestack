@@ -34,9 +34,4 @@ router.post("/image", upload.single("file"), async (req, res) => {
   res.json({ link });
 });
 
-router.post("/image", upload.single("file"), async (req, res) => {
-  const { link } = await postFile(req.file.buffer);
-  res.json({ link });
-});
-
 app.listen(5555, () => console.log("Listening on port 5555"));
