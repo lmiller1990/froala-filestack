@@ -3,16 +3,18 @@ import fetch from "node-fetch";
 
 const client = filestack.init(process.env.FILESTACK_API_KEY);
 
+client.upload()
+
 /**
- * @param {File} file
+ * @param {Buffer} buffer
  * @returns {Promise<{ link: String }>}
  */
-export async function postFile(file) {
+export async function postFile(buffer) {
   const data = await fetch(
     `https://www.filestackapi.com/api/store/S3?key=${process.env.FILESTACK_API_KEY}`,
     {
       method: "POST",
-      body: file,
+      body: buffer,
       headers: { "Content-Type": "image/png" },
     }
   );
