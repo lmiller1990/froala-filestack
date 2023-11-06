@@ -17,6 +17,5 @@ export async function postFile(buffer) {
     }
   );
   const response = await data.json()
-  console.log(response)
   return { link: response.url };
 }

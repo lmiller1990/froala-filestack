@@ -1,7 +1,7 @@
 Cypress.Commands.add('getFroala', () => {
   return cy.get(".fr-element")
 })
-describe("template spec", () => {
+describe("rich text editor", () => {
   it("passes", () => {
     cy.visit("http://localhost:5173");
 
