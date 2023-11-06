@@ -17,7 +17,7 @@ let html = "";
 app.post("/save", async (req, res) => {
   // Save
   html = req.body.body;
-  res.status(204);
+  res.status(200);
   res.end();
 });
 

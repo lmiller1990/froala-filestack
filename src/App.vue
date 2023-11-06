@@ -3,6 +3,7 @@ import { FroalaOptions } from "froala-editor";
 import { useToast } from "vue-toast-notification";
 import { ref } from "vue";
 
+const toast = useToast()
 const html = ref("")
 const loading = ref(true)
 
@@ -21,7 +22,7 @@ const fileUploadEvents = {
 
 /** @type {Partial<FroalaOptions>} */
 const config = {
-  // imageUploadURL: "http://localhost:5555/image",
+  imageUploadURL: "http://localhost:5555/image",
 
   saveURL: "http://localhost:5555/save",
 
@@ -29,6 +30,9 @@ const config = {
 
   events: {
     ...fileUploadEvents,
+    "save.after": () => {
+      toast.success("Post saved")
+    }
   },
 };
 

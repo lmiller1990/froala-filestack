@@ -16,7 +16,7 @@ export async function postFile(buffer) {
       headers: { "Content-Type": "image/png" },
     }
   );
-  const response = data.json()
+  const response = await data.json()
   console.log(response)
   return { link: response.url };
 }
